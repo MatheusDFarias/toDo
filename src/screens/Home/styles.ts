@@ -19,6 +19,7 @@ export const styles = StyleSheet.create({
 
     containerInfo:{
         paddingBottom:20, 
+        marginBottom:5, 
         flexDirection:'row',  
         justifyContent:'space-between',
         borderBottomWidth:2,

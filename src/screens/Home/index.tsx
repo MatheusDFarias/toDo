@@ -16,15 +16,11 @@ export function Home(){
         }else{
 
             tasks.map((item) =>{
-          
-                console.log(item.task+" - "+taskDescription);
                 if(item.task == taskDescription){
                     validade = true;
                     Alert.alert("Atenção","Tarefa com esta descrição já existe!");  
                 }
-                console.log("dentro "+validade);
             })
-            console.log("fora "+validade);
             if(validade == false){
                 setTasks([...tasks, {id: tasks.length , task: taskDescription, check: false}]);
                 setTaskDescription('');
