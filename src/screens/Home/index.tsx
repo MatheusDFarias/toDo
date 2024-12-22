@@ -44,6 +44,7 @@ export function Home(){
 
     function handleRemoveTask(id:number){
         const updateListTask = tasks.filter((item) => {
+            setcountChecked(countChecked-1);
             return item.id !== id
         })
         setTasks(updateListTask)
