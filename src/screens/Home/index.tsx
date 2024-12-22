@@ -22,7 +22,7 @@ export function Home(){
                 }
             })
             if(validade == false){
-                setTasks([...tasks, {id: tasks.length , task: taskDescription, check: false}]);
+                setTasks([...tasks, {id: taskDescription , task: taskDescription, check: false}]);
                 setTaskDescription('');
             }
             validade = false;
@@ -44,7 +44,9 @@ export function Home(){
 
     function handleRemoveTask(id:number){
         const updateListTask = tasks.filter((item) => {
-            setcountChecked(countChecked-1);
+            if(item.id == id && item.check == true){
+               setcountChecked(countChecked-1);
+            }
             return item.id !== id
         })
         setTasks(updateListTask)
@@ -85,7 +87,7 @@ export function Home(){
                           size={24}
                           fillColor={item.check == false ? "#4EA8DE" : "#5E60CE"}
                           text={item.task}
-                          key={item.task}
+                          key={item.id}
                           innerIconStyle={{ borderWidth: 2 }}
                           textStyle={item.check == false ? styles.listText : styles.listTextChecked}
                           style={styles.checkBox}
